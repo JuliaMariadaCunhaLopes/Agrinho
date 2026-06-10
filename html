@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agroforte - Futuro Sustentável</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Configurações Globais e Paleta de Cores */
+        :root {
+            --verde-escuro: #1b4332;
+            --verde-principal: #2d6a4f;
+            --verde-claro: #d8f3dc;
+            --tom-terra: #74c69d;
+            --texto-escuro: #212529;
+            --fundo-leve: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--texto-escuro);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            background-color: var(--verde-escuro);
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header .logo span {
+            color: var(--tom-terra);
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--tom-terra);
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 100px 10% 60px 10%;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            font-size: 32px;
+            color: var(--verde-escuro);
+            margin-bottom: 40px;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .titulo-secao::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--tom-terra);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Seção Home (Banner Inicial) */
+        #home {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 15%;
+        }
+
+        #home h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        #home p {
+            font-size: 18px;
+            max-width: 800px;
+            font-weight: 300;
+        }
+
+        /* Seção O Equilíbrio */
+        #equilibrio {
+            background-color: var(--fundo-leve);
+        }
+
+        .grid-equilibrio {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .conteudo-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--verde-principal);
+        }
+
+        .card h3 {
+            color: var(--verde-principal);
+            margin-bottom: 10px;
+        }
+
+        .imagem-equilibrio img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Seção IBGE e Números */
+        #numeros {
+            background-color: #ffffff;
+        }
+
+        #numeros p {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            font-size: 16px;
+        }
+
+        .container-tabela {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table th {
+            background-color: var(--verde-principal);
+            color: #ffffff;
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 15px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        table tr:nth-child(even) {
+            background-color: var(--fundo-leve);
+        }
+
+        table tr:last-child td {
+            border-bottom: 2px solid var(--verde-principal);
+        }
+
+        .destaque-tabela {
+            font-weight: 600;
+            color: var(--verde-escuro);
+        }
+
+        /* Rodapé / Contato */
+        footer {
+            background-color: var(--verde-escuro);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 10%;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        footer a {
+            color: var(--tom-terra);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsividade para Dispositivos Móveis */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            nav {
+                margin-top: 10px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            #home h1 {
+                font-size: 32px;
+            }
+            #home p {
+                font-size: 15px;
+            }
+            .grid-equilibrio {
+                grid-template-columns: 1fr;
+            }
+            section {{ background-color: #333; color: white; padding: 10px; }
+                padding: 80px 5% 40px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Agro<span>forte</span></div>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#equilibrio">O Equilíbrio</a>
+            <a href="#numeros">O Agro em Números</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>O Futuro é Agroforte</h1>
+        <p>O verdadeiro significado de um agro forte não está apenas no volume do que se colhe, mas na longevidade da terra que produz. O futuro sustentável do planeta depende diretamente do equilíbrio entre a alta produtividade no campo e a conservação ativa dos nossos recursos naturais. Unindo tecnologia de ponta, respeito à biodiversidade e gestão eficiente, o campo prova que produzir alimentos e proteger o meio ambiente são metas complementares.</p>
+    </section>
+
+    <section id="equilibrio">
+        <h2 class="titulo-secao">Como Produzir Preservando?</h2>
+        <div class="grid-equilibrio">
+            <div class="conteudo-cards">
+                <p style="margin-bottom: 15px;">Para alcançar a sustentabilidade real, o produtor rural brasileiro adota técnicas que renovam o solo e otimizam o uso da água. Entre os principais pilares desse novo cenário estão:</p>
+                
+                <div class="card">
+                    <h3>Integração Lavoura-Pecuária-Floresta (ILPF)</h3>
+                    <p>Estratégia que otimiza o uso da terra, associando diferentes sistemas produtivos em uma mesma área, reduzindo a emissão de gases de efeito estufa.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Sistema de Plantio Direto</h3>
+                    <p>Técnica que mantém a palhada da safra anterior sobre o solo, evitando a erosão e mantendo a umidade da terra.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Uso de Bioinsumos</h3>
+                    <p>Substituição gradual ou complementar de defensivos químicos por soluções biológicas, protegendo polinizadores e lençóis freáticos.</p>
+                </div>
+            </div>
+            <div class="imagem-equilibrio">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad451?auto=format&fit=crop&q=80&w=1470" alt="Manejo Agrícola Sustentável">
+            </div>
+        </div>
+    </section>
+
+    <section id="numeros">
+        <h2 class="titulo-secao">O Agro em Números: O que diz o IBGE</h2>
+        <p>Os dados oficiais do Instituto Brasileiro de Geografia e Estatística (IBGE) reforçam a força econômica do campo e os desafios da preservação. A agropecuária é um dos motores do PIB nacional (com expressivo crescimento de 11,7% na série recente de fechamento anual), gerando emprego e liderando as exportações mundiais de proteína e grãos. Veja abaixo os cenários mapeados pelo Censo Agropecuário:</p>
+        
+        <div class="container-tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Indicador do Campo (IBGE)</th>
+                        <th>Impacto / Cenário Real</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="destaque-tabela">Agricultura Familiar</td>
+                        <td>Emprega mais de <strong>10 milhões de pessoas</strong> no Brasil, sendo a base da segurança alimentar do país.</td>
+                    </tr>
+                    <tr>
+                        <td class="destaque-tabela">Uso da Terra</td>
+                        <td>Bilhões de hectares são mantidos como áreas de preservação permanente (APPs) e reserva legal dentro das propriedades privadas.</td>
+                    </tr>
+                    <tr>
+                        <td class="destaque-tabela">Tecnologia e Conectividade</td>
+                        <td>O acesso à internet no campo cresceu mais de <strong>1900%</strong> nos últimos anos, permitindo a adoção da agricultura de precisão (que evita o desperdício de água e insumos).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size: 14px; color: #666; margin-top: 20px; font-style: italic;">Nota: O IBGE realiza o monitoramento constante das safras nacionais e está em fase de campo para o novo Censo Agropecuário, mapeando as novas fronteiras da tecnologia e práticas sustentáveis dos estabelecimentos rurais brasileiros.</p>
+    </section>
+
+    <footer id="contato">
+        <p>&copy; 2026 Agroforte - Futuro Sustentável. Todos os direitos reservados.</p>
+        <p>Dados baseados nos relatórios públicos e Censos do <a href="https://www.ibge.gov.br" target="_blank">IBGE</a>.</p>
+    </footer>
+
+</body>
+</html>
